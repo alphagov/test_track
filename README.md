@@ -1,34 +1,34 @@
 # TestTrack
 
-v0.0.4
+v0.1.0
 
 This gem provides sane defaults for using Javascript test frameworks in
-the Rails 3.1 Asset Pipeline. It allows you to write and run
+the Rails 4 Asset Pipeline. It allows you to write and run
 [Qunit][qunit] or [Jasmine][jasmine] tests while leveraging the new
 compiling power of Tilt and Sprockets 2. Now enabling more profit when you
 write your JS tests in CoffeeScript!
 
 ## How it works
 
-TestTrack is a mountable engine whichs provides routes to
+TestTrack is a mountable engine which provides routes to
 Javascript test runners pre-loaded with your application's code and
 tests.
 
 ## Usage
 
 ### 1. Install the Test Track gem
-In your Rails 3.1 app, just add it to your Gemfile, like this:
+In your Rails 4 app, just add it to your Gemfile, like this:
 
     gem "test_track"
 
-### 2. Create a Manfiest
+### 2. Create a Manifest
 TestTrack automatically adds test paths to your app's asset pipeline.
 The default locations are...
 
 * Jasmine - `spec/javascripts`
 * Qunit   - `test/javascripts`
 
-This is a good place for your manfiest file for your framework of choice. Here is a sample Jasmine manifest, called `jasmine.js` in `spec/javascripts` that includes our test suite and helpers:
+This is a good place for your manifest file for your framework of choice. Here is a sample Jasmine manifest, called `jasmine.js` in `spec/javascripts` that includes our test suite and helpers:
 
     // SUITE :: Jasmine
     // SUITE MANIFEST :: spec/javascripts/jasmine.js
@@ -59,7 +59,7 @@ In your `routes.rb`:
 
     mount TestTrack::Engine => "test"
 
-And you're off the the races. An index is provided with links to the test
+And you're off to the races. An index is provided with links to the test
 runners. They would be accessible at `/test/jasmine` and
 `/test/qunit` in the example above.
 
@@ -101,4 +101,3 @@ This project uses the MIT-LICENSE.
 [qunit]: https://github.com/jquery/qunit
 [sinon]: http://sinonjs.org/
 [sinon-docs]: http://sinonjs.org/docs/
-
